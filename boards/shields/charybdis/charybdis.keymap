@@ -39,7 +39,6 @@
                         &ctrl_alt_combo &kp LCTRL  &kp LALT             &kp SPACE  &kp LSHFT  &mo LOWER
                                         &kp MINUS  &kp BSLH             &kp DEL    &kp LGUI
             >;
-
         };
 
         raise_layer {
