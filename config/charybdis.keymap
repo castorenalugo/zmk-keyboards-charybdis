@@ -427,7 +427,7 @@
             bindings = <
 &trans  &trans  &trans  &trans   &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans   &trans    &trans                    &trans  &trans  &trans  &trans    &trans  &trans
-&trans  &trans   &trans   &trans   &trans   &trans                    &trans  &trans  &trans  &trans    &trans  &trans
+&trans  &trans   &trans   &LPAR   &MINUS   &trans                    &trans  &UNDER  &RPAR  &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
                            &trans  &trans  &trans            &trans  &trans  &trans
                                    &trans  &trans          &trans  &trans
