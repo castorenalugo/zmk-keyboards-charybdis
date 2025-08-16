@@ -4,6 +4,413 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
+        behaviors {
+        macro: macro {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <500>;
+            bindings = <&to 2 &to 3>;
+            label = "MACRO";
+        };
+
+        up: up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UP";
+            bindings = <&kp P>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        down: down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOWN";
+            bindings = <&kp N>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        left: left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT";
+            bindings = <&kp B>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        right: right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT";
+            bindings = <&kp F>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mod_ctrl: mod_ctrl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp PAGE_DOWN>;
+
+            mods = <MOD_LCTL>;
+        };
+
+        mod_nav: mod_nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mod_ctrl>, <&kp PAGE_UP>;
+
+            mods = <MOD_LALT>;
+        };
+
+        home: home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp HOME>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        end: end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp END>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        del: del {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp D>, <&kp DEL>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        m_cut: m_cut {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp LG(X)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        m_cc: m_cc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&m_cut>, <&kp LG(C)>;
+
+            mods = <MOD_LALT>;
+        };
+
+        m_yank: m_yank {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp LG(V)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        m_undo: m_undo {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp LG(Z)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        w_cut: w_cut {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp LC(X)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        w_cc: w_cc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&w_cut>, <&kp LC(C)>;
+
+            mods = <MOD_LALT>;
+        };
+
+        w_yank: w_yank {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp LC(V)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        w_undo: w_undo {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp LC(Z)>;
+
+            mods = <(MOD_LCTL)>;
+        };
+    };
+
+    macros {
+        to_folder: to_folder {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_1>,
+                <&macro_release>,
+                <&kp NUMBER_1>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 0>,
+                <&macro_release>,
+                <&to 0>;
+        };
+
+        to_emacs: to_emacs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_2>,
+                <&macro_release>,
+                <&kp NUMBER_2>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 4>,
+                <&macro_release>,
+                <&to 4>;
+        };
+
+        to_browser: to_browser {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_3>,
+                <&macro_release>,
+                <&kp NUMBER_3>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 0>,
+                <&macro_release>,
+                <&to 0>;
+        };
+
+        to_terminal: to_terminal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_4>,
+                <&macro_release>,
+                <&kp NUMBER_4>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 0>,
+                <&macro_release>,
+                <&to 0>;
+        };
+
+        to_notes: to_notes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_5>,
+                <&macro_release>,
+                <&kp NUMBER_5>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 0>,
+                <&macro_release>,
+                <&to 0>;
+        };
+
+        to_chat: to_chat {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&kp NUMBER_6>,
+                <&macro_release>,
+                <&kp NUMBER_6>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_press>,
+                <&to 0>,
+                <&macro_release>,
+                <&to 0>;
+        };
+
+        p1: p1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(A) &kp LS(C) &kp N1 &kp N0 &kp N8 &kp A &kp L &kp L &kp I &kp E &kp D &kp POUND &kp DLLR>;
+            label = "P1";
+        };
+
+        p2: p2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(J) &kp E &kp R &kp G &kp O &kp T &kp A &kp S &kp S &kp N1 &kp N2 &kp N3 &kp EXCL &kp EXCL>;
+            label = "P2";
+        };
+
+        select: select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(S) &kp E &kp L &kp E &kp C &kp T &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp SPACE &kp RPAR &kp LEFT>;
+            label = "SELECT";
+        };
+
+        where: where {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(W) &kp H &kp E &kp R &kp E &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp RPAR &kp LEFT &to 0>;
+            label = "WHERE";
+        };
+
+        dist: dist {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(D) &kp I &kp S &kp T &kp I &kp N &kp C &kp T &kp LPAR &kp RPAR &to 0>;
+            label = "DIST";
+        };
+
+        distb: distb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(D) &kp I &kp S &kp T &kp I &kp N &kp C &kp T &kp LS(B) &kp Y &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp RPAR &kp LEFT &to 0>;
+            label = "distb";
+        };
+
+        fod: fod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(F) &kp I &kp R &kp S &kp T &kp LS(O) &kp R &kp LS(D) &kp E &kp F &kp A &kp U &kp L &kp T &kp LPAR &kp RPAR &to 0>;
+            label = "FOD";
+        };
+
+        foda: foda {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(F) &kp I &kp R &kp S &kp T &kp LS(O) &kp R &kp LS(D) &kp E &kp F &kp A &kp U &kp L &kp T &kp LS(A) &kp S &kp Y &kp N &kp C &kp LPAR &kp RPAR &to 0>;
+            label = "FODA";
+        };
+
+        tl: tl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(T) &kp O &kp LS(L) &kp I &kp S &kp T &kp LPAR &kp RPAR &to 0>;
+            label = "TL";
+        };
+
+        tla: tla {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(T) &kp O &kp LS(L) &kp I &kp S &kp T &kp LS(A) &kp S &kp Y &kp N &kp C &kp LPAR &kp RPAR &to 0>;
+            label = "TLA";
+        };
+
+        ta: ta {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(T) &kp O &kp LS(A) &kp R &kp R &kp A &kp Y &kp LPAR &kp RPAR &to 0>;
+            label = "TA";
+        };
+
+        taa: taa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(T) &kp O &kp LS(A) &kp R &kp R &kp A &kp Y &kp LS(A) &kp S &kp Y &kp N &kp C &kp LPAR &kp RPAR &to 0>;
+            label = "TAA";
+        };
+
+        any: any {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(A) &kp N &kp Y &kp LPAR &kp RPAR &to 0>;
+            label = "ANY";
+        };
+
+        anya: anya {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(A) &kp N &kp Y &kp LS(A) &kp S &kp Y &kp N &kp C &kp LPAR &kp RPAR &to 0>;
+            label = "ANYASYNC";
+        };
+
+        ob: ob {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(O) &kp R &kp D &kp E &kp R &kp B &kp Y &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp RPAR &kp LEFT &to 0>;
+            label = "ORDERBY";
+        };
+
+        obd: obd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(O) &kp R &kp D &kp E &kp R &kp B &kp Y &kp LS(D) &kp E &kp S &kp C &kp E &kp N &kp D &kp I &kp N &kp G &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp RPAR &kp LEFT &to 0>;
+            label = "ORDERBYDESC";
+        };
+
+        count: count {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(C) &kp O &kp U &kp N &kp T &kp LPAR &kp RPAR &to 0>;
+            label = "COUNT";
+        };
+
+        countc: countc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(C) &kp O &kp U &kp N &kp T &kp LPAR &kp X &kp SPACE &kp EQUAL &kp GT &kp SPACE &kp X &kp DOT &kp RPAR &kp LEFT &to 0>;
+            label = "COUNTCOND";
+        };
+
+        sod: sod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(S) &kp I &kp N &kp G &kp L &kp E &kp LS(O) &kp R &kp LS(D) &kp E &kp F &kp A &kp U &kp L &kp T &kp LPAR &kp RPAR &to 0>;
+            label = "SOD";
+        };
+
+        soda: soda {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp LS(S) &kp I &kp N &kp G &kp L &kp E &kp LS(O) &kp R &kp LS(D) &kp E &kp F &kp A &kp U &kp L &kp T &kp LS(A) &kp S &kp Y &kp N &kp C &kp LPAR &kp RPAR &to 0>;
+            label = "SODA";
+        };
+
+        lambda: r_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp EQUAL &kp GT &kp SPACE>;
+            label = "R_ARROW";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
