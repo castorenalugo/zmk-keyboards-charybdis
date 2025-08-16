@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 / {
-        behaviors {
+    behaviors {
         macro: macro {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
