@@ -186,9 +186,9 @@
                 <&macro_release>,
                 <&kp LGUI>,
                 <&macro_press>,
-                <&to 4>,
+                <&to 1>,
                 <&macro_release>,
-                <&to 4>;
+                <&to 1>;
         };
 
         to_browser: to_browser {
@@ -287,7 +287,7 @@
 &kp DEL    &kp A    &kp S    &kp D       &right      &kp G                          &kp H       &kp J       &kp K       &kp L     &kp SEMI    &kp RET
 &kp HOME   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M       &kp COMMA   &kp DOT   &kp SLASH   &kp END
                              &kp LC(C)   &kp LCTRL   &kp PG_UP                      &kp PG_DN   &kp LSHFT   &kp SPACE
-                                         &kp LALT    &kp LC(Z)                      &kp LC(V)   &mo 1
+                                         &kp LALT    &kp LC(Z)                      &kp LC(V)   &mo 2
             >;
         };
         imacs {
@@ -297,7 +297,7 @@
 &trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans   &kp B                    &kp N   &trans  &trans  &trans  &trans  &trans
                         &kp LA(W)  &trans  &trans                   &trans  &trans  &trans
-                                   &trans  &kp LC(SLASH)                &kp LC(Y)   &mo 1
+                                   &trans  &kp LC(SLASH)                &kp LC(Y)   &mo 2
             >;
         };
         aux {
