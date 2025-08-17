@@ -420,7 +420,7 @@
 &kp EQUAL  &home   &kp S   &del      &right     &kp G            &kp H     &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
 &kp TAB    &kp Z   &kp X   &kp C     &mod_nav   &left            &down     &kp M      &kp COMMA  &kp DOT  &w_undo   &kp RET
                            &kp LALT  &kp LCTRL  &kp A            &kp BSPC  &kp SPACE  &kp LSHFT
-                                     &kp LALT   &kp ESC          &kp E     &to 1
+                                     &kp LALT   &kp ESC          &kp E     &mo 1
             >;
         };
         aux {
