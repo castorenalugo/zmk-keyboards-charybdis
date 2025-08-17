@@ -425,12 +425,12 @@
         };
         aux {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp LBKT            &kp RBKT  &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp BACKSLASH       &kp SQT   &trans  &trans  &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp MINUS           &kp EQUAL &trans  &trans  &trans  &trans  &trans
-                        &kp LC(X)  &trans  &trans              &trans    &trans  &trans
-                                &trans  &kp LC(Y)              &trans    &trans
+&trans  &trans          &trans            &trans     &trans     &trans              &trans         &trans     &trans    &trans             &trans           &trans
+&trans  &trans          &trans            &trans     &trans     &kp LBKT            &kp RBKT       &trans     &trans    &trans             &trans           &trans
+&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp EQUAL  &kp UNDER  &kp PIPE            &kp BACKSLASH  &kp MINUS  &kp PLUS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
+&trans  &trans          &trans            &trans     &trans     &kp MINUS           &kp EQUAL      &trans     &trans    &trans             &trans           &trans
+                                          &kp LC(X)  &trans     &trans              &trans         &trans     &trans
+                                                     &trans     &kp LC(Y)           &trans         &trans
             >;
         };
     };
