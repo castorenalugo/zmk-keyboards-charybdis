@@ -290,6 +290,16 @@
                                          &kp LALT    &kp LC(Z)                      &kp LC(V)   &mo 1
             >;
         };
+        imacs {
+            bindings = <
+&trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &kp P   &trans
+&trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &kp B                    &kp N   &trans  &trans  &trans  &trans  &trans
+                        &kp LA(W)  &trans  &trans                   &trans  &trans  &trans
+                                   &trans  &kp LC(SLASH)                &kp LC(Y)   &mo 1
+            >;
+        };
         aux {
             bindings = <
 &trans  &to_folder      &to_emacs         &to_browser  &to_terminal  &to_notes           &to_chat       &trans     &trans    &trans             &trans           &trans
