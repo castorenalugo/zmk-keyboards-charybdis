@@ -213,7 +213,7 @@
             bindings = <
 &trans  &to_folder      &to_emacs         &to_browser        &to_terminal  &to_notes             &to_chat       &trans     &trans            &trans             &trans           &trans
 &trans  &trans          &trans            &kp DOUBLE_QUOTES  &trans        &trans                &trans         &trans     &kp SINGLE_QUOTE  &trans             &trans           &trans
-&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp PLUS           &kp UNDER     &kp PIPE              &kp BACKSLASH  &kp MINUS  &kp EQUAL         &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
+&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp PLUS           &kp MINUS     &kp PIPE              &kp BACKSLASH  &kp UNDER  &kp EQUAL         &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
 &trans  &trans          &trans            &trans             &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
                                           &trans             &trans        &trans                &trans         &trans     &trans
                                                              &trans        &kp LC(Y)             &trans         &trans
