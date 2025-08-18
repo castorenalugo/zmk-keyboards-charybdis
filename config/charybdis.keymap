@@ -202,9 +202,9 @@
         imacs {
             bindings = <
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &kp P   &trans
+&trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  trans   &trans
 &trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans  &kp B                     &kp N   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
                         &e_cc      &trans  &trans                    &trans  &trans  &trans
                                    &trans  &kp LC(SLASH)             &kp LC(Y)   &trans
             >;
