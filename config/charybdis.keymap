@@ -191,7 +191,7 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-&kp ESC    &kp N1   &kp N2   &kp N3      &kp N4      &kp N5                         &kp N6      &kp N7        &kp N8      &kp N9    &kp N0      &kp GRAVE
+&kp EQUAL  &kp N1   &kp N2   &kp N3      &kp N4      &kp N5                         &kp N6      &kp N7        &kp N8      &kp N9    &kp N0      &kp MINUS
 &kp TAB    &kp Q    &kp W    &kp E       &kp R       &kp T                          &kp Y       &kp U         &kp I       &kp O     &up         &kp DEL
 &kp BSPC   &kp A    &kp S    &kp D       &right      &kp G                          &kp H       &kp J         &kp K       &kp L     &kp SEMI    &kp RET
 &kp HOME   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M         &kp COMMA   &kp DOT   &kp SLASH   &kp END
@@ -212,8 +212,8 @@
         aux {
             bindings = <
 &trans  &to_folder      &to_emacs         &to_browser        &to_terminal  &to_notes             &to_chat       &trans     &trans            &trans             &trans           &trans
-&trans  &trans          &trans            &kp DOUBLE_QUOTES  &trans        &trans                &trans         &trans     &kp SINGLE_QUOTE  &trans             &trans           &trans
-&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp PLUS           &kp UNDER     &kp PIPE              &kp BACKSLASH  &kp MINUS  &kp EQUAL         &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
+&trans  &trans          &trans            &trans             &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
+&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp DOUBLE_QUOTES  &kp GRAVE     &kp TILDE             &kp BACKSLASH  &kp PIPE  &kp SINGLE_QUOTE  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
 &trans  &trans          &trans            &trans             &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
                                           &trans             &trans        &trans                &trans         &trans     &trans
                                                              &trans        &kp LC(Y)             &trans         &trans
