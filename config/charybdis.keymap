@@ -204,19 +204,19 @@
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &kp P   &trans
 &trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans   &kp B                    &kp N   &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans  &kp B                     &kp N   &trans  &trans  &trans  &trans  &trans
                         &e_cc      &trans  &trans                    &trans  &trans  &trans
                                    &trans  &kp LC(SLASH)             &kp LC(Y)   &trans
             >;
         };
         aux {
             bindings = <
-&trans  &to_folder      &to_emacs         &to_browser  &to_terminal  &to_notes             &to_chat       &trans     &trans    &trans             &trans           &trans
-&trans  &trans          &trans            &trans       &trans        &trans                &trans         &trans     &trans    &trans             &trans           &trans
-&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp EQUAL    &kp UNDER     &kp PIPE              &kp BACKSLASH  &kp MINUS  &kp PLUS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
-&trans  &trans          &trans            &trans       &trans        &trans                &trans         &trans     &trans    &trans             &trans           &trans
-                                          &trans       &trans        &trans                &trans         &trans     &trans
-                                                       &trans        &kp LC(Y)             &trans         &trans
+&trans  &to_folder      &to_emacs         &to_browser  &to_terminal       &to_notes             &to_chat       &trans         &trans    &trans             &trans           &trans
+&trans  &trans          &trans            &trans       &kp DOUBLE_QUOTES  &trans                &trans         &SINGLE_QUOTE  &trans    &trans             &trans           &trans
+&trans  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp EQUAL    &kp UNDER          &kp PIPE              &kp BACKSLASH  &kp MINUS      &kp PLUS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &trans
+&trans  &trans          &trans            &trans       &trans             &trans                &trans         &trans         &trans    &trans             &trans           &trans
+                                          &trans       &trans             &trans                &trans         &trans         &trans
+                                                       &trans             &kp LC(Y)             &trans         &trans
             >;
         };
     };
