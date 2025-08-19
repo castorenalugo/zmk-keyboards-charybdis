@@ -188,7 +188,7 @@
 &kp BSPC   &kp A    &kp S    &kp D       &right      &kp G                          &kp H       &kp J         &kp K       &kp L     &kp SEMI    &kp RET
 &kp LBKT   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M         &kp COMMA   &kp DOT   &kp SLASH   &kp RBKT
                              &kp BSLH    &kp LCTRL   &mt LALT ESC                   &kp LC(V)   &lt 2 SPACE   &kp LSHFT
-                                         &kp LC(Z)   &kp SQT                        &kp GRAVE   &kp w_cc
+                                         &kp LC(Z)   &kp SQT                        &kp GRAVE   &w_cc
             >;
         };
         imacs {
