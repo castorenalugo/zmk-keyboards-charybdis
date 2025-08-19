@@ -187,8 +187,8 @@
 &kp TAB    &kp Q    &kp W    &kp E       &kp R       &kp T                          &kp Y       &kp U         &kp I       &kp O     &up         &kp DEL
 &kp BSPC   &kp A    &kp S    &kp D       &right      &kp G                          &kp H       &kp J         &kp K       &kp L     &kp SEMI    &kp RET
 &kp LBKT   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M         &kp COMMA   &kp DOT   &kp SLASH   &kp RBKT
-                             &w_cc       &kp LCTRL   &mt LALT ESC                   &kp GRAVE   &lt 2 SPACE   &kp LSHFT
-                                         &kp LC(Z)   &kp SQT                    &kp BACKSLASH   &kp LC(V)
+                             &w_cc       &kp LCTRL   &mt LALT ESC                   &kp LC(V)   &lt 2 SPACE   &kp LSHFT
+                                         &kp LC(Z)   &kp SQT                    &kp BACKSLASH   &kp GRAVE
             >;
         };
         imacs {
@@ -197,8 +197,8 @@
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-                        &e_cc      &trans  &trans                    &trans  &trans  &trans
-                                &kp LC(SLASH) &trans                 &trans  &kp LC(Y)
+                        &e_cc      &trans  &trans                  &kp LC(Y) &trans  &trans
+                                &kp LC(SLASH) &trans                 &trans  &trans
             >;
         };
         aux {
@@ -208,7 +208,7 @@
 &trans  &trans          &trans            &trans             &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
 &trans  &trans          &trans            &trans             &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
                                           &trans             &trans        &trans                &trans         &trans     &trans
-                                                             &trans        &kp LC(Y)             &trans         &trans
+                                                            &kp LC(Y)      &trans                &trans         &trans
             >;
         };
     };
