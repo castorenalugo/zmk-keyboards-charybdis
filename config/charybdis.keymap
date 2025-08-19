@@ -204,11 +204,11 @@
         aux {
             bindings = <
 &trans  &to_folder   &to_emacs    &to_browser    &to_terminal  &to_notes             &to_chat       &trans     &trans            &trans             &trans           &trans
-&trans  &trans       &trans        &tran         &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
 &trans  &trans       &trans        &trans        &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
-&trans  &trans       &trans        &trans         &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
-                                   &trans         &trans        &trans                &trans         &trans     &trans
-                                                  &kp LC(Y)      &trans                &trans         &trans
+&trans  &trans       &trans        &trans        &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
+&trans  &trans       &trans        &trans        &trans        &trans                &trans         &trans     &trans            &trans             &trans           &trans
+                                   &trans        &trans        &trans                &trans         &trans     &trans
+                                                 &kp LC(Y)      &trans                &trans         &trans
             >;
         };
     };
