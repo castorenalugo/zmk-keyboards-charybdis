@@ -18,39 +18,67 @@
             bindings = <&kp LA(W)>, <&kp LC(W)>;
         };
 
-        up: up {
+        prev: prev {
             compatible = "zmk,behavior-mod-morph";
-            label = "UP";
             bindings = <&kp P>, <&kp UP_ARROW>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
 
-        down: down {
+        next: next {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOWN";
             bindings = <&kp N>, <&kp DOWN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
 
-        left: left {
+        befr: befr {
             compatible = "zmk,behavior-mod-morph";
-            label = "LEFT";
             bindings = <&kp B>, <&kp LEFT>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
         };
 
-        right: right {
+        fwrd: fwrd {
             compatible = "zmk,behavior-mod-morph";
-            label = "RIGHT";
             bindings = <&kp F>, <&kp RIGHT>;
 
             #binding-cells = <0>;
+            mods = <(MOD_LCTL)>;
+        };
+
+        mod_ctrl: mod_ctrl {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp V>, <&kp PAGE_DOWN>;
+
+            mods = <MOD_LCTL>;
+        };
+
+        nav: nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mod_ctrl>, <&kp PAGE_UP>;
+
+            mods = <MOD_LALT>;
+        };
+
+        home: home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp HOME>;
+
+            mods = <(MOD_LCTL)>;
+        };
+
+        end: end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp END>;
+
             mods = <(MOD_LCTL)>;
         };
     };
