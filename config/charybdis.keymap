@@ -194,9 +194,9 @@
 &kp EQUAL  &kp N1   &kp N2   &kp N3      &kp N4      &kp N5                         &kp N6      &kp N7        &kp N8      &kp N9    &kp N0      &kp MINUS
 &kp TAB    &kp Q    &kp W    &kp E       &kp R       &kp T                          &kp Y       &kp U         &kp I       &kp O     &up         &kp DEL
 &kp BSPC   &kp A    &kp S    &kp D       &right      &kp G                          &kp H       &kp J         &kp K       &kp L     &kp SEMI    &kp RET
-&kp HOME   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M         &kp COMMA   &kp DOT   &kp SLASH   &kp END
+&kp LBKT   &kp Z    &kp X    &kp C       &kp V       &left                          &down       &kp M         &kp COMMA   &kp DOT   &kp SLASH   &kp RBKT
                              &w_cc       &kp LCTRL   &mt LALT ESC                   &mo 1       &lt 2 SPACE   &kp LSHFT
-                                         &kp PG_UP   &kp LC(Z)                      &kp LC(V)   &kp PG_DN
+                                         &kp LC(Z)   &kp SQT                        &kp LC(V)   &kp PG_DN
             >;
         };
         imacs {
