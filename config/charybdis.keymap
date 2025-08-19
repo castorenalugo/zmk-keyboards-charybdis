@@ -66,13 +66,7 @@
             mods = <MOD_LALT>;
         };
 
-        home: home {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&kp HOME>;
-
-            mods = <(MOD_LCTL)>;
-        };
+        home: home { compatible = "zmk,behavior-mod-morph"; bindings = <&kp A>, <&kp HOME>; mods = <(MOD_LCTL)>;};
 
         end: end {
             compatible = "zmk,behavior-mod-morph";
