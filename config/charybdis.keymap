@@ -102,6 +102,11 @@
             bindings = <&to 0>, <&find>;
             mods = <MOD_LCTL>;
         };
+        s_save: s_save {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&to 0>, <&save>;
+            mods = <MOD_LCTL>;
+        };
 
     };
 
@@ -235,6 +240,24 @@
                 <&macro_press &kp P>,
                 <&macro_release &kp P>,
                 <&macro_release &kp LCTRL>,
+                <&to 0>;
+        };
+        save: save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LC(S)>,
+                <&macro_release &kp LC(S)>,
+                <&to 0>;
+        };
+        saveall: saveall {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LC(K)>,
+                <&macro_release &kp LC(K)>,
+                <&macro_press &kp S>,
+                <&macro_release &kp S>,
                 <&to 0>;
         };
 
