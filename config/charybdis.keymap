@@ -99,11 +99,13 @@
         };
         f_find: f_find {
             compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&to 0>, <&find>;
             mods = <MOD_LCTL>;
         };
         s_save: s_save {
             compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&to 0>, <&save>;
             mods = <MOD_LCTL>;
         };
