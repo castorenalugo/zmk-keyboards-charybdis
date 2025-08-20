@@ -97,6 +97,12 @@
 
             mods = <(MOD_LCTL)>;
         };
+        f_find: f_find {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&to 0>, <&find>;
+            mods = <MOD_LCTL>;
+        };
+
     };
 
     macros {
@@ -221,6 +227,17 @@
             bindings = <&none &kp LS(J) &kp E &kp R &kp G &kp O &kp T &kp A &kp S &kp S &kp N1 &kp N2 &kp N3 &kp EXCL &kp EXCL>;
             label = "P2";
         };
+        find: find {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LCTRL>,
+                <&macro_press &kp P>,
+                <&macro_release &kp P>,
+                <&macro_release &kp LCTRL>,
+                <&to 0>;
+        };
+
     };
 
     keymap {
@@ -237,9 +254,19 @@
         };
         imacs {
             bindings = <
+&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &f_find  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans     &trans   &trans                  &kp LC(Y) &trans  &trans
+                                &kp LC(SLASH) &trans                 &trans  &trans
+            >;
+        };
+        funct {
+            bindings = <
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &kp F   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans     &find   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans     &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans     &trans  &trans                  &kp LC(Y) &trans  &trans
                                 &kp LC(SLASH) &trans                 &trans  &trans
