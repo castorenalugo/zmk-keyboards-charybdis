@@ -106,7 +106,7 @@
         s_save: s_save {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&save>;
+            bindings = <&saveall>, <&save>;
             mods = <MOD_LCTL>;
         };
 
@@ -262,7 +262,14 @@
                 <&macro_release &kp S>,
                 <&to 0>;
         };
-
+        killbfr: killbfr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press &kp LC(W)>,
+                <&macro_release &kp LC(W)>,
+                <&to 0>;
+        };
     };
 
     keymap {
@@ -279,11 +286,11 @@
         };
         imacs {
             bindings = <
-&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &f_find  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans     &trans   &trans                  &kp LC(Y) &trans  &trans
+&trans  &trans  &trans   &trans     &trans   &trans                    &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans   &trans     &trans   &trans                    &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &s_save  &trans     &f_find  &to 0                     &trans  &trans  &killbfr  &trans  &trans  &trans
+&trans  &trans  &trans   &trans     &trans   &trans                    &trans  &trans  &trans    &trans  &trans  &trans
+                         &trans     &trans   &trans                  &kp LC(Y) &trans  &trans
                                 &kp LC(SLASH) &trans                 &trans  &trans
             >;
         };
