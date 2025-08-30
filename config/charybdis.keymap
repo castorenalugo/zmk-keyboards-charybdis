@@ -91,6 +91,12 @@
                 <&macro_tap &kp LS(HOME)>,
                 <&macro_tap &kp BSPC>;
         };
+        split: split {
+            <&macro_tap &kp LC(BSLH)>,
+            <&macro_tap &kp LC(K)>,
+            <&macro_tap &kp LC(LEFT)>,
+            <&to 0>;
+        }
     };
 
     keymap {
@@ -119,34 +125,23 @@
         meta {
             display-name = "meta";
             bindings = <
-&trans        &trans     &trans     &trans      &trans        &trans                &trans     &trans     &trans       &trans     &trans       &trans
-&trans        &trans     &kp LC(C)  &trans      &trans        &trans                &trans     &trans     &trans       &trans     &trans       &kp LC(DEL)
-&kp LC(BSPC)  &trans     &trans     &trans   &kp LC(RIGHT) &trans                &trans     &trans    &b_kill       &trans     &trans       &trans
-&trans        &trans     &trans     &trans      &kp PG_UP     &kp LC(LEFT)          &trans     &trans     &m_coma      &m_dot     &m_slsh      &trans
-                                    &trans      &trans        &trans                &trans     &trans     &trans
-                                                &trans        &trans                &trans     &trans
+&trans        &trans  &trans     &trans   &trans        &trans                &trans     &trans    &trans       &trans     &trans       &trans
+&trans        &trans  &kp LC(C)  &trans   &trans        &trans                &trans     &trans    &trans       &trans     &trans       &kp LC(DEL)
+&kp LC(BSPC)  &trans  &trans     &trans   &kp LC(RIGHT) &trans                &trans     &trans    &b_kill      &trans     &trans       &trans
+&trans        &trans  &trans     &trans   &kp PG_UP     &kp LC(LEFT)          &trans     &trans    &m_coma      &m_dot     &m_slsh      &trans
+                                 &trans   &trans        &trans                &trans     &trans    &trans
+                                          &trans        &trans                &trans     &trans
             >;
         };
         prefix {
             display-name = "prefix";
             bindings = <
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &save      &trans    &find       &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
-                                       &trans    &kp LCTRL   &trans                 &trans      &trans     &trans
-                                                 &trans      &trans                 &trans      &trans
-            >;
-        };
-        hyper {
-            display-name = "hyper";
-            bindings = <
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &save        &trans    &find       &trans                 &markall    &trans     &killbfr    &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
-                                       &trans    &kp LCTRL   &trans                 &trans      &trans     &trans
-                                                 &trans      &trans                 &trans      &trans
+&trans       &trans       &trans     &split    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
+&trans       &trans       &save      &trans    &find    &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
+                                     &trans    &trans   &trans                 &trans      &trans     &trans
+                                               &trans   &trans                 &trans      &trans
             >;
         };
     };
