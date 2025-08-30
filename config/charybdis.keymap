@@ -102,10 +102,10 @@
         hyper {
             display-name = "hyper";
             bindings = <
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &kp LC(S)    &trans    &kp LC(P)   &trans                 &kp LC(A)   &trans     &kp LC(W)   &trans     &trans     &trans
-&trans       &trans       &trans       &trans    &trans      &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
+&trans        &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
+&trans        &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
+&kp LC(LA(H)) &trans       &kp LC(S)    &trans    &kp LC(P)   &trans                 &kp LC(A)   &trans     &kp LC(W)   &trans     &trans     &trans
+&trans        &trans       &trans       &trans    &trans      &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
                                        &trans    &kp LCTRL   &trans                 &trans      &trans     &trans
                                                  &trans      &trans                 &trans      &trans
             >;
