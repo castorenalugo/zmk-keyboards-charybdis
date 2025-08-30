@@ -92,15 +92,21 @@
                 <&macro_tap &kp BSPC>;
         };
         split: split {
-            <&macro_tap &kp LC(BSLH)>,
-            <&macro_tap &kp LC(K)>,
-            <&macro_tap &kp LC(Y)>,
-            <&to 0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(BSLH)>,
+                <&macro_tap &kp LC(K)>,
+                <&macro_tap &kp LC(Y)>,
+                <&to 0>;
         }
         sw_win: sw_win {
-            <&macro_tap &kp LC(K)>,
-            <&macro_tap &kp LC(Y)>,
-            <&to 0>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(K)>,
+                <&macro_tap &kp LC(Y)>,
+                <&to 0>;
         }
     };
 
