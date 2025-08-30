@@ -5,12 +5,6 @@
 
 / {
     behaviors {
-        s_save: s_save {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&saveall>, <&save>;
-            mods = <MOD_LCTL>;
-        };
         m_dot: m_dot {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -32,47 +26,11 @@
     };
 
     macros {
-        find: find {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap &kp LC(P)>,
-                <&to 0>;
-        };
-        save: save {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap &kp LC(S)>,
-                <&to 0>;
-        };
-        saveall: saveall {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap &kp LC(K)>,
-                <&macro_tap &kp S>,
-                <&to 0>;
-        };
-        killbfr: killbfr {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap &kp LC(W)>,
-                <&to 0>;
-        };
         nextbfr: nextbfr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap &kp LC(TAB)>,
-                <&to 0>;
-        };
-        markall: markall {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap &kp LC(A)>,
                 <&to 0>;
         };
         kill: kill {
@@ -91,27 +49,41 @@
                 <&macro_tap &kp LC(C)>,
                 <&macro_tap &kp BSPC>;
         };
+        clear: clear {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LS(END)>,
+                <&macro_tap &kp BSPC>;
+        };
+        b_clear: b_clear {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LS(HOME)>,
+                <&macro_tap &kp BSPC>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-&kp EQUAL     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                &kp N6     &kp N7     &kp N8       &kp N9      &kp N0        &kp MINUS
-&kp TAB       &kp Q      &kp W      &kp E      &kp R      &kp T                 &kp Y      &kp U      &kp I        &kp O       &kp P         &kp SQT
+&kp ESC       &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                &kp N6     &kp N7     &kp N8       &kp N9      &kp N0        &kp GRAVE
+&kp TAB       &kp Q      &kp W      &kp E      &kp R      &kp T                 &kp Y      &kp U      &kp I        &kp O       &kp P         &kp DEL
 &kp BSPC      &kp A      &kp S      &kp D      &kp F      &kp G                 &kp H      &kp J      &kp K        &kp L       &kp SEMI      &kp RET
 &kp LBKT      &kp Z      &kp X      &kp C      &kp V      &kp B                 &kp N      &kp M      &kp COMMA    &kp DOT     &kp SLASH     &kp RBKT
-                                    &mo 2      &mo 1      &kp ESC               &kp D      &kp SPACE  &kp LSHFT
-                                               &kp A      &kp BSLH                         &kp GRAVE  &kp LGUI
+                                    &mo 2      &mo 1      &kp SQT               &kp D      &kp SPACE  &kp LSHFT
+                                               &kp MINUS  &kp BSLH                         &kp GRAVE  &kp LGUI
             >;
         };
         control {
             display-name = "control";
             bindings = <
 &kp LC(EQUAL) &trans     &trans     &trans      &trans       &trans                &trans     &trans     &trans       &trans      &trans        &kp LC(MINUS)
-&trans        &trans     &kp LC(X)  &kp END     &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &trans
-&trans        &kp HOME   &kp LC(F)  &kp DEL     &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
-&kp LC(B)     &trans     &to 3      &trans      &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
+&trans        &trans     &kp LC(X)  &kp END     &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
+&b_clear      &kp HOME   &kp LC(F)  &trans      &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
+&kp LC(B)     &trans     &trans     &trans      &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
                                     &trans      &trans       &trans                &trans     &trans     &trans
                                                 &trans       &trans                &trans     &trans
             >;
@@ -120,19 +92,19 @@
             display-name = "meta";
             bindings = <
 &trans        &trans     &trans     &trans      &trans        &trans                &trans     &trans     &trans       &trans     &trans       &trans
-&trans        &trans     &kp LC(C)  &trans      &trans        &trans                &trans     &trans     &trans       &trans     &trans       &trans
-&kp LC(BSPC)  &trans     &trans     &kp LC(DEL) &kp LC(RIGHT) &trans                &trans     &b_kill    &trans       &trans     &trans       &trans
+&trans        &trans     &kp LC(C)  &trans      &trans        &trans                &trans     &trans     &trans       &trans     &trans       &kp LC(DEL)
+&kp LC(BSPC)  &trans     &trans     &trans      &kp LC(RIGHT) &trans                &trans     &trans     &b_kill      &trans     &trans       &trans
 &trans        &trans     &trans     &trans      &kp PG_UP     &kp LC(LEFT)          &trans     &trans     &m_coma      &m_dot     &m_slsh      &trans
                                     &trans      &trans        &trans                &trans     &trans     &trans
                                                 &trans        &trans                &trans     &trans
             >;
         };
-        func {
-            display-name = "func";
+        hyper {
+            display-name = "hyper";
             bindings = <
 &trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
 &trans       &trans       &trans       &trans    &trans      &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &s_save      &trans    &find       &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
+&trans       &trans       &kp LC(S)    &trans    &kp LC(P)   &trans                 &kp LC(A)   &trans     &kp LC(W)   &trans     &trans     &trans
 &trans       &trans       &trans       &trans    &trans      &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
                                        &trans    &kp LCTRL   &trans                 &trans      &trans     &trans
                                                  &trans      &trans                 &trans      &trans
