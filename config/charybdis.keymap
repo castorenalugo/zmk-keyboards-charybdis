@@ -94,7 +94,12 @@
         split: split {
             <&macro_tap &kp LC(BSLH)>,
             <&macro_tap &kp LC(K)>,
-            <&macro_tap &kp LC(LEFT)>,
+            <&macro_tap &kp LC(Y)>,
+            <&to 0>;
+        }
+        sw_win: sw_win {
+            <&macro_tap &kp LC(K)>,
+            <&macro_tap &kp LC(Y)>,
             <&to 0>;
         }
     };
@@ -137,7 +142,7 @@
             display-name = "prefix";
             bindings = <
 &trans       &trans       &trans     &split    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &sw_win     &trans     &trans
 &trans       &trans       &save      &trans    &find    &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
 &trans       &trans       &trans     &trans    &trans   &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
                                      &trans    &trans   &trans                 &trans      &trans     &trans
