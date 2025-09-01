@@ -112,14 +112,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &kp LC(END)>,
+                <&macro_tap &kp LC(PG_UP)>,
                 <&to 0>;
         };
         b_bufr: b_bufr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &kp LC(HOME)>,
+                <&macro_tap &kp LC(PG_DN)>,
                 <&to 0>;
         };
     };
