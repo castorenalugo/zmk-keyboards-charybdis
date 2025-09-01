@@ -108,6 +108,20 @@
                 <&macro_tap &kp LC(Y)>,
                 <&to 0>;
         };
+        f_bufr: f_bufr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(PG_UP)>,
+                <&to 0>;
+        };
+        b_bufr: b_bufr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(PG_DN)>,
+                <&to 0>;
+        };
     };
 
     keymap {
@@ -125,12 +139,12 @@
         control {
             display-name = "control";
             bindings = <
-&trans     &trans     &trans     &trans      &trans       &trans                &trans     &trans     &trans       &trans      &trans        &trans
-&trans     &trans     &kp LC(X)  &kp END     &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
+&trans     &trans     &trans     &trans     &trans       &trans                &trans     &trans     &trans       &trans      &trans        &trans
+&trans     &trans     &kp LC(X)  &kp END    &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
 &b_clear   &kp HOME   &kp LC(F)  &trans     &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
-&kp LC(B)  &trans     &to 3      &trans      &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
-                                    &trans      &trans       &trans                &trans     &trans     &trans
-                                                &trans       &trans                &trans     &trans
+&kp LC(B)  &trans     &to 3      &trans     &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
+                                 &trans     &trans       &trans                &trans     &trans     &trans
+                                            &trans       &trans                &trans     &trans
             >;
         };
         meta {
@@ -148,9 +162,9 @@
             display-name = "prefix";
             bindings = <
 &trans       &trans       &trans     &split    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &sw_win     &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &sw_win    &trans     &trans
 &trans       &trans       &save      &trans    &find    &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &nextbfr               &trans      &trans     &trans      &trans     &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &b_bufr     &f_bufr    &trans     &trans
                                      &trans    &trans   &trans                 &trans      &trans     &trans
                                                &trans   &trans                 &trans      &trans
             >;
