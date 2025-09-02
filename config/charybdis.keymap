@@ -150,7 +150,7 @@
 &trans     &trans     &kp LC(X)  &kp END    &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
 &b_clear   &kp HOME   &kp LC(F)  &trans     &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
 &kp LC(B)  &trans     &to 3      &trans     &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
-                                 &trans     &trans       &trans                &trans     &trans     &trans
+                                 &trans     &trans       &trans                &trans     &to 4      &trans
                                             &trans       &trans                &trans     &trans
             >;
         };
