@@ -122,6 +122,13 @@
                 <&macro_tap &kp LC(PG_UP)>,
                 <&to 0>;
         };
+        unmark: unmark {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LEFT>,
+                <&to 0>;
+        };
     };
 
     keymap {
@@ -172,12 +179,12 @@
         mark {
             display-name = "mark";
             bindings = <
-&none       &none       &none     &none     &none       &none                 &none      &none     &none    &none     &none     &none
-&none       &none       &none     &kp END   &none       &none                 &none      &none     &none    &none     &kp UP    &none
-&none       &kp HOME    &none     &none     &kp RIGHT   &to 0                 &none      &none     &none    &none     &none     &none
-&none       &none       &none     &none     &kp PG_DN   &none                 &kp DOWN   &none     &none    &none     &none     &none
-                                  &none     &none       &none                 &none      &none     &none
-                                            &none       &none                 &none      &none
+&none       &none         &none     &none        &none           &none                &none         &none     &none    &none     &none       &none
+&none       &none         &none     &kp LS(END)  &none           &none                &none         &none     &none    &none     &kp LS(UP)  &none
+&none       &kp LS(HOME)  &none     &none        &kp LS(RIGHT)   &kp LEFT             &none         &none     &none    &none     &none       &none
+&none       &none         &none     &none        &kp LS(PG_DN)   &unmark             &kp LS(DOWN)  &none     &none    &none     &none       &none
+                                    &kp LALT     &none           &none                &none         &none     &none
+                                                 &none           &none                &none         &none
             >;
         };
     };
