@@ -181,7 +181,7 @@
             bindings = <
 &none       &none         &none     &none        &none           &none                &none         &none     &none    &none     &none       &none
 &none       &none         &none     &kp LS(END)  &none           &none                &none         &none     &none    &none     &kp LS(UP)  &none
-&none       &kp LS(HOME)  &none     &none        &kp LS(RIGHT)   &unmark              '&none         &none     &none    &none     &none       &none
+&none       &kp LS(HOME)  &none     &none        &kp LS(RIGHT)   &unmark              &none         &none     &none    &none     &none       &none
 &none       &none         &none     &none        &kp LS(PG_DN)   &kp LS(LEFT)         &kp LS(DOWN)  &none     &none    &none     &none       &none
                                     &kp LALT     &none           &none                &none         &none     &none
                                                  &none           &none                &none         &none
