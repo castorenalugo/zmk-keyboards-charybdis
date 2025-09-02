@@ -226,8 +226,8 @@
             display-name = "mark";
             bindings = <
 &none       &none         &none     &none        &none        &none                &none         &none     &none    &none     &none       &none
-&none       &none         &mark_cc  &kp LS(END)  &none        &none                &none         &none     &none    &none     &kp LS(UP)  &none
-&none       &kp LS(HOME)  &none     &none        &mark_f      &unmark              &none         &none     &none    &none     &none       &none
+&none       &none         &mark_cc  &kp LS(END)  &none        &none                &none         &none     &none    &none     &kp LS(UP)  &mark_bspc
+&mark_bspc  &kp LS(HOME)  &none     &none        &mark_f      &unmark              &none         &none     &none    &none     &none       &none
 &none       &none         &none     &none        &mark_nav    &mark_b              &kp LS(DOWN)  &none     &none    &none     &none       &none
                                     &kp LALT     &none        &none                &none         &none     &none
                                                  &none        &none                &none         &none
