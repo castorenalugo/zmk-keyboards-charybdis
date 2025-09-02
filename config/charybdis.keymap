@@ -100,7 +100,7 @@
                 <&macro_tap &kp LC(Y)>,
                 <&to 0>;
         };
-        sw_win: sw_win {
+        other_w: other_w {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -112,14 +112,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &kp LC(PG_UP)>,
+                <&macro_tap &kp LC(PG_DN)>,
                 <&to 0>;
         };
         b_bufr: b_bufr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_tap &kp LC(PG_DN)>,
+                <&macro_tap &kp LC(PG_UP)>,
                 <&to 0>;
         };
     };
@@ -162,11 +162,22 @@
             display-name = "prefix";
             bindings = <
 &trans       &trans       &trans     &split    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &sw_win    &trans     &trans
+&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &other_w   &trans     &trans
 &trans       &trans       &save      &trans    &find    &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
 &trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &b_bufr     &f_bufr    &trans     &trans
                                      &trans    &trans   &trans                 &trans      &trans     &trans
                                                &trans   &trans                 &trans      &trans
+            >;
+        };
+        mark {
+            display-name = "mark";
+            bindings = <
+&none       &none       &none     &none     &none       &none                 &none      &none     &none    &none     &none     &none
+&none       &none       &none     &kp END   &none       &none                 &none      &none     &none    &none     &kp UP    &none
+&none       &kp HOME    &none     &none     &kp RIGHT   &to 0                 &none      &none     &none    &none     &none     &none
+&none       &none       &none     &none     &kp PG_DN   &none                 &kp DOWN   &none     &none    &none     &none     &none
+                                  &none     &none       &none                 &none      &none     &none
+                                            &none       &none                 &none      &none
             >;
         };
     };
