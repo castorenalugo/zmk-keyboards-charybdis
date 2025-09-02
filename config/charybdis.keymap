@@ -23,6 +23,30 @@
             bindings = <&kp LC(SPACE)>, <&kp LC(Y)>;
             mods = <MOD_LSFT>;
         };
+        mark_f: mark_f {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RIGHT)>, <&kp LS(LC(RIGHT))>;
+            mods = <MOD_LALT>;
+        };
+        mark_b: mark_b {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LEFT)>, <&kp LS(LC(LEFT))>;
+            mods = <MOD_LALT>;
+        };
+        mark_nav: mark_nav {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(PG_DN)>, <&kp LS(PG_UP)>;
+            mods = <MOD_LALT>;
+        };
+        mark_cc: mark_cc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mark_cut>, <&mark_copy>;
+            mods = <MOD_LALT>;
+        };
     };
 
     macros {
@@ -129,6 +153,28 @@
                 <&macro_tap &kp LEFT>,
                 <&to 0>;
         };
+        mark_bspc: mark_bspc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp BSPC>,
+                <&to 0>;
+        };
+        mark_copy: mark_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(C)>,
+                <&macro_tap &kp RIGHT>,
+                <&to 0>;
+        };
+        mark_cut: mark_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(X)>,
+                <&to 0>;
+        };
     };
 
     keymap {
@@ -148,7 +194,7 @@
             bindings = <
 &trans     &trans     &trans     &trans     &trans       &trans                &trans     &trans     &trans       &trans      &trans        &trans
 &trans     &trans     &kp LC(X)  &kp END    &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
-&b_clear   &kp HOME   &kp LC(F)  &trans     &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
+&b_clear   &kp HOME   &kp LC(F)  &kp DEL    &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
 &kp LC(B)  &trans     &to 3      &trans     &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
                                  &trans     &trans       &trans                &trans     &to 4      &trans
                                             &trans       &trans                &trans     &trans
@@ -179,12 +225,12 @@
         mark {
             display-name = "mark";
             bindings = <
-&none       &none         &none     &none        &none           &none                &none         &none     &none    &none     &none       &none
-&none       &none         &none     &kp LS(END)  &none           &none                &none         &none     &none    &none     &kp LS(UP)  &none
-&none       &kp LS(HOME)  &none     &none        &kp LS(RIGHT)   &unmark              &none         &none     &none    &none     &none       &none
-&none       &none         &none     &none        &kp LS(PG_DN)   &kp LS(LEFT)         &kp LS(DOWN)  &none     &none    &none     &none       &none
-                                    &kp LALT     &none           &none                &none         &none     &none
-                                                 &none           &none                &none         &none
+&none       &none         &none     &none        &none        &none                &none         &none     &none    &none     &none       &none
+&none       &none         &mark_cc  &kp LS(END)  &none        &none                &none         &none     &none    &none     &kp LS(UP)  &none
+&none       &kp LS(HOME)  &none     &none        &mark_f      &unmark              &none         &none     &none    &none     &none       &none
+&none       &none         &none     &none        &mark_nav    &mark_b              &kp LS(DOWN)  &none     &none    &none     &none       &none
+                                    &kp LALT     &none        &none                &none         &none     &none
+                                                 &none        &none                &none         &none
             >;
         };
     };
