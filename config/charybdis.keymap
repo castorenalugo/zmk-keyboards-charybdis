@@ -124,6 +124,14 @@
                 <&macro_tap &kp LC(Y)>,
                 <&to 0>;
         };
+        w_join: w_join {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(X)>,
+                <&macro_tap &kp N0>,
+                <&to 0>;
+        };
         f_bufr: f_bufr {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -206,7 +214,7 @@
         prefix {
             display-name = "prefix";
             bindings = <
-&none       &none       &none      &split      &none       &none                    &none        &none      &none        &none       &none      &none
+&none       &none       &none      &split      &none       &none                    &none        &none      &none        &none       &w_join      &none
 &none       &none       &none      &none       &none       &none                    &none        &none      &none        &other_w    &none      &none
 &none       &none       &save      &none       &find       &to 0                    &markall     &none      &killbfr     &none       &none      &none
 &none       &none       &none      &none       &none       &none                    &none        &none      &b_bufr      &f_bufr     &none      &none
