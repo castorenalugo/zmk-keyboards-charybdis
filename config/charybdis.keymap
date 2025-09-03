@@ -122,25 +122,33 @@
                 <&macro_tap &kp LC(PG_UP)>,
                 <&to 0>;
         };
-        mark_bspc: mark_bspc {
+        mrk_bspc: mrk_bspc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap &kp BSPC>,
                 <&to 0>;
         };
-        mark_copy: mark_copy {
+        mrk_copy: mrk_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap &kp LC(C)>,
+                <&macro_tap &kp ESC>,
                 <&to 0>;
         };
-        mark_cut: mark_cut {
+        mrk_cut: mrk_cut {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_tap &kp LC(X)>,
+                <&to 0>;
+        };
+        mrk_exit: mrk_exit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp ESC>,
                 <&to 0>;
         };
     };
@@ -160,56 +168,56 @@
         control {
             display-name = "control";
             bindings = <
-&trans     &trans     &trans     &trans     &trans       &trans                &trans     &trans     &trans       &trans      &trans        &trans
-&trans     &trans     &kp LC(X)  &kp END    &kp LS(F3)   &trans                &kp LC(V)  &trans     &trans       &trans      &kp UP        &clear
-&b_clear   &kp HOME   &kp LC(F)  &kp DEL    &kp RIGHT    &trans                &trans     &trans     &kill        &kp LC(L)   &kp LC(GRAVE) &trans
-&kp LC(B)  &trans     &to 3      &trans     &kp PG_DN    &kp LEFT              &kp DOWN   &trans     &kp LC(DOT)  &kp LC(F12) &kp LC(Z)     &kp LC(J)
-                                 &trans     &trans       &trans                &trans     &to 4      &trans
-                                            &trans       &trans                &trans     &trans
+&none      &none      &none        &none       &none        &none                &none      &none     &none        &none        &none         &none
+&none      &none      &kp LC(X)    &kp END     &kp LS(F3)   &none                &kp LC(V)  &none     &none        &none        &kp UP        &clear
+&b_clear   &kp HOME   &kp LC(F)    &kp DEL     &kp RIGHT    &none                &none      &none     &kill        &kp LC(L)    &kp LC(GRAVE) &none
+&kp LC(B)  &none      &to 3        &none       &kp PG_DN    &kp LEFT             &kp DOWN   &none     &kp LC(DOT)  &kp LC(F12)  &kp LC(Z)     &kp LC(J)
+                                   &none       &none        &none                &none      &to 4     &none
+                                               &none        &none                &none      &none
             >;
         };
         meta {
             display-name = "meta";
             bindings = <
-&trans        &trans  &trans     &trans   &trans        &trans                &trans     &trans    &trans       &trans     &trans       &trans
-&trans        &trans  &kp LC(C)  &trans   &trans        &trans                &trans     &trans    &trans       &trans     &trans       &kp LC(DEL)
-&kp LC(BSPC)  &trans  &trans     &trans   &kp LC(RIGHT) &trans                &trans     &trans    &b_kill      &trans     &trans       &trans
-&trans        &trans  &trans     &trans   &kp PG_UP     &kp LC(LEFT)          &trans     &trans    &m_coma      &m_dot     &m_slsh      &trans
-                                 &trans   &trans        &trans                &trans     &trans    &trans
-                                          &trans        &trans                &trans     &trans
+&none          &none    &none       &none    &none          &none                 &none     &none    &none       &none     &none       &none
+&none          &none    &kp LC(C)   &none    &none          &none                 &none     &none    &none       &none     &none       &kp LC(DEL)
+&kp LC(BSPC)   &none    &none       &none    &kp LC(RIGHT)  &none                 &none     &none    &b_kill     &none     &none       &none
+&none          &none    &none       &none    &kp PG_UP      &kp LC(LEFT)          &none     &none    &m_coma     &m_dot    &m_slsh     &none
+                                    &none    &none          &none                 &none     &none    &none
+                                             &none          &none                 &none     &none
             >;
         };
         prefix {
             display-name = "prefix";
             bindings = <
-&trans       &trans       &trans     &split    &trans   &trans                 &trans      &trans     &trans      &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &trans      &other_w   &trans     &trans
-&trans       &trans       &save      &trans    &find    &to 0                  &markall    &trans     &killbfr    &trans     &trans     &trans
-&trans       &trans       &trans     &trans    &trans   &trans                 &trans      &trans     &b_bufr     &f_bufr    &trans     &trans
-                                     &trans    &trans   &trans                 &trans      &trans     &trans
-                                               &trans   &trans                 &trans      &trans
+&none       &none       &none      &split      &none       &none                    &none        &none      &none        &none       &none      &none
+&none       &none       &none      &none       &none       &none                    &none        &none      &none        &other_w    &none      &none
+&none       &none       &save      &none       &find       &to 0                    &markall     &none      &killbfr     &none       &none      &none
+&none       &none       &none      &none       &none       &none                    &none        &none      &b_bufr      &f_bufr     &none      &none
+                                   &none       &none       &none                    &none        &none      &none
+                                               &none       &none                    &none        &none
             >;
         };
         mark {
             display-name = "mark";
             bindings = <
-&none       &none         &none     &none        &none          &none                &none         &none     &none    &none     &none       &none
-&none       &none         &mark_cut &kp LS(END)  &none          &none                &none         &none     &none    &none     &kp LS(UP)  &mark_bspc
-&mark_bspc  &kp LS(HOME)  &none     &none        &kp LS(RIGHT)  &to 0                &none         &none     &none    &kp LC(L) &none       &none
-&none       &none         &none     &none        &kp LS(PG_DN)  &kp LS(LEFT)         &kp LS(DOWN)  &none     &none    &none     &none       &none
-                                    &mo 5        &none          &none                &none         &none     &none
-                                                 &none          &none                &none         &none
+&none       &none         &none     &none        &none          &none                  &none         &none     &none    &none     &none       &none
+&none       &none         &mrk_cut  &kp LS(END)  &none          &none                  &none         &none     &none    &none     &kp LS(UP)  &mrk_bspc
+&mrk_bspc   &kp LS(HOME)  &none     &none        &kp LS(RIGHT)  &mrk_exit              &none         &none     &none    &kp LC(L) &none       &none
+&none       &none         &none     &none        &kp LS(PG_DN)  &kp LS(LEFT)           &kp LS(DOWN)  &none     &none    &none     &none       &none
+                                    &mo 5        &none          &none                  &none         &none     &none
+                                                 &none          &none                  &none         &none
             >;
         };
         markmeta {
             display-name = "markmeta";
             bindings = <
-&none       &none        &none      &none        &none              &none                   &none    &none     &none    &none     &none       &none
-&none       &none        &mark_copy &none        &none              &none                   &none    &none     &none    &none     &none       &none
-&none       &none        &none      &none        &kp LS(LC(RIGHT))  &none                   &none    &none     &none    &none     &none       &none
-&none       &none        &none      &none        &kp LS(PG_UP)      &kp LS(LC(LEFT))        &none    &none     &none    &none     &none       &none
-                                    &none        &none              &none                   &none    &none     &none
-                                                 &none              &none                   &none    &none
+&none    &none      &none       &none     &none              &none                     &none     &none     &none      &none      &none       &none
+&none    &none      &mrk_copy   &none     &none              &none                     &none     &none     &none      &none      &none       &none
+&none    &none      &none       &none     &kp LS(LC(RIGHT))  &none                     &none     &none     &none      &none      &none       &none
+&none    &none      &none       &none     &kp LS(PG_UP)      &kp LS(LC(LEFT))          &none     &none     &none      &none      &none       &none
+                                &none     &none              &none                     &none     &none     &none
+                                          &none              &none                     &none     &none
             >;
         };
     };
