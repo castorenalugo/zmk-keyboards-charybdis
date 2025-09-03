@@ -100,6 +100,22 @@
                 <&macro_tap &kp LC(Y)>,
                 <&to 0>;
         };
+        w_incrse: w_incrse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(X)>,
+                <&macro_tap &kp EQUAL>,
+                <&to 0>;
+        };
+        w_decrse: w_decrse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap &kp LC(X)>,
+                <&macro_tap &kp MINUS>,
+                <&to 0>;
+        };
         other_w: other_w {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -195,7 +211,7 @@
 &none       &none       &save      &none       &find       &to 0                    &markall     &none      &killbfr     &none       &none      &none
 &none       &none       &none      &none       &none       &none                    &none        &none      &b_bufr      &f_bufr     &none      &none
                                    &none       &none       &none                    &none        &none      &none
-                                               &none       &none                    &none        &none
+                                            &w_decrse      &none                    &none        &w_incrse
             >;
         };
         mark {
